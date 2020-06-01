@@ -43,5 +43,5 @@ images_list = get_images_list()
 
 for index in range(len(images_list)):
     image = images_list[index]
-    html  = get_file_body(image,index,len(images_list))
+    html  = get_file_body(image, len(images_list), index)
     create_html_file(index, html)
