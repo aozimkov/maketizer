@@ -2,11 +2,15 @@
 # coding: utf-8
 
 import os
+import glob
+
+# Mask for choose specific files in folder
+FILEMASK = "*.png"
 
 # Read current folder, get sorted list with *.png filnames
 def get_images_list():
     path = os.path.dirname(os.path.abspath(__file__))
-    return os.listdir(path)
+    return [os.path.basename(filename) for filename in glob.glob("{}/{}".format(path, FILEMASK))]
 
 # Make an easy html file with image
 def get_file_body(image, maket_length, current_index):
