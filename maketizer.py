@@ -14,7 +14,8 @@ def get_images_list():
 
 # Make an easy html file with image
 def get_file_body(image, maket_length, current_index):
-    index = current_index + 1 if current_index > 0 else ''
+    #index files naming: index.html, index2.html, ... , indexn.html
+    index = current_index + 2 if current_index < maket_length - 1 else ''
     return """<html>
 <head>
 <title>Test</title>
